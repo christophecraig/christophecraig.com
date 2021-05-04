@@ -1,6 +1,6 @@
 ---
-title: Great coffee with a conscience
-subtitle: Support sustainable farming while enjoying a cup
+title: Christophe Craig
+subtitle: Front End Web Developer
 image: ''
 blurb:
   heading: Why Kaldi?
