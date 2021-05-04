@@ -8,8 +8,8 @@ blurb:
 intro:
   heading: ''
   text: ''
-products: []
-values:
+travel: []
+about:
   heading: Hi.
   text: "I'm Christophe, a French/Kiwi depending on who asks. I was born in Wellington
     but grew up, studied and started working in France. After finishing my second
