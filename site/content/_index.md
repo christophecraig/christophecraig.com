@@ -25,5 +25,6 @@ values:
     for a couple of months in the South Island. I am now ready to get back to the
     North Island, after these long, amazing and relaxing holidays which I will never
     forget."
+  imageUrl: "/img/img_2698-04052021.jpeg"
 
 ---
