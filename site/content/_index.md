@@ -3,27 +3,25 @@ title: Christophe Craig
 subtitle: Front End Web Developer
 image: ''
 blurb:
-  heading: Why Kaldi?
-  text: Kaldi is the coffee store for everyone who believes that great coffee shouldn't
-    just taste good, it should do good too. We source all of our beans directly from
-    small scale sustainable farmers and make sure part of the profits are reinvested
-    in their communities.
+  heading: Hi there,
+  text: "I'm Christophe, a French/Kiwi depending on who asks. I was born in Wellington
+    but grew up, studied and started working in France. After finishing my second
+    two year diploma in software development, I wanted to travel a bit around the
+    world and even managed to get 7 of my friends on board to join me 6 months later.
+    \n\nAnd Covid happened. \n\nCan't be complaining too much of course, as we probably
+    are in the best place to live this nightmare, but I just miss them.\nAnyways,
+    after all came back to normal here, I started looking for a job where I could
+    meet people and become confident enough in my English. Which I absolutely am now
+    \U0001F44C\nI met nice people who I became friends with and travelled with them
+    for a couple of months in the South Island. I am now ready to get back to the
+    North Island, after these long, amazing and relaxing holidays which I will never
+    forget.\n"
 intro:
   heading: What we offer
   text: Kaldi is the ultimate spot for coffee lovers who want to learn about their
     java’s origin and support the farmers that grew it. We take coffee production,
     roasting and brewing seriously and we’re glad to pass that knowledge to anyone.
-products:
-- image: img/illustrations-coffee.svg
-  text: We sell green and roasted coffee beans that are sourced directly from independent
-    farmers and farm cooperatives. We’re proud to offer a variety of coffee beans
-    grown with great care for the environment and local communities. Check our post
-    or contact us directly for current availability.
-- image: "/img/illustrations-coffee-gear.svg"
-  text: We offer a small, but carefully curated selection of brewing gear and tools
-    for every taste and experience level. No matter if you roast your own beans or
-    just bought your first french press, you’ll find a gadget to fall in love with
-    in our shop.
+products: []
 values:
   heading: Our values
   text: Coffee is an amazing part of human culture but it has a dark side too – one
@@ -32,3 +30,4 @@ values:
     and unifying nature.
 
 ---
+shit what is this
