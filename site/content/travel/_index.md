@@ -8,11 +8,12 @@ description: Kaldi is the ultimate spot for coffee lovers who want to learn abou
 trips:
 - title: USA - West Coast
   pictures:
-  - "/img/img_2979-05052021.jpeg"
-  - "/img/img_2415-05052021.jpeg"
-  - "/img/img_2411-05052021.jpeg"
-  - "/img/img_2460-05052021.jpeg"
-  dates: 2020-02-11T11:00:00+00:00
+  - "/uploads/img_2411-05052021.jpeg"
+  - "/uploads/img_2415-05052021.jpeg"
+  - "/uploads/img_2460-05052021.jpeg"
+  - "/uploads/img_2698-04052021.jpeg"
+  - "/uploads/img_2979-05052021.jpeg"
+  dates: 2020-02-11T11:00:00.000+00:00
   text: It was good though
   tags:
   - USA
