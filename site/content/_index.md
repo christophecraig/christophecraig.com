@@ -1,7 +1,7 @@
 ---
 title: Christophe Craig
 subtitle: Front End Web Developer
-image: ''
+image: '/img/img_2698-04052021.jpeg'
 blurb:
   heading: ''
   text: ''

@@ -1,3 +1,57 @@
-.bg-cover {
-    background-position: cover;
+.flex {
+    display: flex;
+}
+
+.td-none {
+    text-decoration: none;
+}
+
+.menu {
+    flex: 1;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.menu-item {
+    color: #333;
+}
+
+.menu-item:hover {
+    color: #555;
+}
+
+.site-title {
+    color: #555;
+}
+
+.navbar {
+    flex: 1;
+}
+
+.jumbotron {
+    background-size: cover;
+    background-position: 0 -12vw;
+    height: 45vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbotron-text-container {
+    padding: 0 55px;
+    background-color: #11111150;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.jumbotron-title {
+    color: #FFF;
+}
+
+.jumbotron-subtitle {
+    color: #DFDFDF;
+}
+
+.footer div {
+    flex: 1 0 auto;
 }
