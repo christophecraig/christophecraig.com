@@ -29,7 +29,7 @@ sections:
   label: Content
   create: all
   match: "**/*"
-upload_dir: site/static/img
+upload_dir: site/content/uploads
 public_path: "/img"
 front_matter_path: ''
 use_front_matter_path: false
