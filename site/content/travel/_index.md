@@ -13,7 +13,8 @@ trips:
   - "/img/img_2411-05052021.jpeg"
   - "/img/img_2460-05052021.jpeg"
   dates: 2020-02-11T11:00:00+00:00
-  text: It was good
+  text: It was good though
+  tags: []
 type: ''
 
 ---
