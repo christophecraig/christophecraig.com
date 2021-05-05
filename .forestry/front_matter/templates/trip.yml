@@ -1,0 +1,118 @@
+---
+label: Trip
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: type
+  label: type
+- type: file
+  name: image
+  label: image
+- type: text
+  name: heading
+  label: heading
+- type: textarea
+  name: description
+  label: description
+- type: field_group
+  name: intro
+  label: intro
+  fields:
+  - type: field_group_list
+    name: blurbs
+    label: blurbs
+    fields:
+    - type: file
+      name: image
+      label: image
+    - type: textarea
+      name: text
+      label: text
+  - type: text
+    name: heading
+    label: heading
+  - type: textarea
+    name: description
+    label: description
+- type: field_group
+  name: main
+  label: main
+  fields:
+  - type: text
+    name: heading
+    label: heading
+  - type: textarea
+    name: description
+    label: description
+  - type: field_group
+    name: image1
+    label: image1
+    fields:
+    - type: text
+      name: alt
+      label: alt
+    - type: file
+      name: image
+      label: image
+  - type: field_group
+    name: image2
+    label: image2
+    fields:
+    - type: text
+      name: alt
+      label: alt
+    - type: file
+      name: image
+      label: image
+  - type: field_group
+    name: image3
+    label: image3
+    fields:
+    - type: text
+      name: alt
+      label: alt
+    - type: file
+      name: image
+      label: image
+- type: field_group_list
+  name: testimonials
+  label: testimonials
+  fields:
+  - type: text
+    name: author
+    label: author
+  - type: textarea
+    name: quote
+    label: quote
+- type: file
+  name: full_image
+  label: full_image
+- type: field_group
+  name: pricing
+  label: pricing
+  fields:
+  - type: text
+    name: heading
+    label: heading
+  - type: textarea
+    name: description
+    label: description
+  - type: field_group_list
+    name: plans
+    label: plans
+    fields:
+    - type: text
+      name: description
+      label: description
+    - type: list
+      name: items
+      label: items
+    - type: text
+      name: plan
+      label: plan
+    - type: text
+      name: price
+      label: price
