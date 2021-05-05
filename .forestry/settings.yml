@@ -33,7 +33,7 @@ upload_dir: site/content/uploads
 public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
-file_template: ":filename:-:day::month::year:"
+file_template: ":filename:"
 build:
   preview_env:
   - HUGO_ENV=staging
