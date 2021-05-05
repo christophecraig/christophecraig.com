@@ -17,102 +17,39 @@ fields:
 - type: textarea
   name: description
   label: description
-- type: field_group
-  name: intro
-  label: intro
-  fields:
-  - type: field_group_list
-    name: blurbs
-    label: blurbs
-    fields:
-    - type: file
-      name: image
-      label: image
-    - type: textarea
-      name: text
-      label: text
-  - type: text
-    name: heading
-    label: heading
-  - type: textarea
-    name: description
-    label: description
-- type: field_group
-  name: main
-  label: main
-  fields:
-  - type: text
-    name: heading
-    label: heading
-  - type: textarea
-    name: description
-    label: description
-  - type: field_group
-    name: image1
-    label: image1
-    fields:
-    - type: text
-      name: alt
-      label: alt
-    - type: file
-      name: image
-      label: image
-  - type: field_group
-    name: image2
-    label: image2
-    fields:
-    - type: text
-      name: alt
-      label: alt
-    - type: file
-      name: image
-      label: image
-  - type: field_group
-    name: image3
-    label: image3
-    fields:
-    - type: text
-      name: alt
-      label: alt
-    - type: file
-      name: image
-      label: image
 - type: field_group_list
-  name: testimonials
-  label: testimonials
+  name: trips
+  label: Trips
   fields:
-  - type: text
-    name: author
-    label: author
-  - type: textarea
-    name: quote
-    label: quote
-- type: file
-  name: full_image
-  label: full_image
-- type: field_group
-  name: pricing
-  label: pricing
-  fields:
-  - type: text
-    name: heading
-    label: heading
-  - type: textarea
-    name: description
-    label: description
-  - type: field_group_list
-    name: plans
-    label: plans
-    fields:
-    - type: text
-      name: description
-      label: description
-    - type: list
-      name: items
-      label: items
-    - type: text
-      name: plan
-      label: plan
-    - type: text
-      name: price
-      label: price
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
+    description: The name of the place/region visited
+  - name: pictures
+    type: image_gallery
+    config: {}
+    label: Pictures
+    description: Pictures taken in the area
+  - name: dates
+    type: datetime
+    label: Dates
+    description: The dates this trip took place
+    config:
+      required: false
+      date_format: 
+      time_format: 
+      display_utc: false
+  - name: text
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Text
+    description: Write about the trip !
+  config:
+    labelField: ''
