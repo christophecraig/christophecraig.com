@@ -51,6 +51,11 @@ fields:
         format: markdown
     label: Text
     description: Write about the trip !
+  - name: tags
+    type: tag_list
+    default: []
+    label: Tags
+    description: Key-words
   config:
     labelField: ''
 pages:
