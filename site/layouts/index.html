@@ -2,9 +2,7 @@
 
 {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
 
-{{ partial "short-text" .Params.blurb}}
-
-{{ partial "text-and-image" (dict "heading" .Params.about.heading "text" .Params.about.text "imageUrl" .Params.about.imageUrl "buttonText" "Read more" "buttonLink" "/about") }}
+<!-- {{ partial "media-block" (dict "heading" .Params.about.heading "text" .Params.about.text "imageUrl" .Params.about.imageUrl "buttonText" "Read more" "buttonLink" "/about") }} -->
 
 {{ partial "blog" . }}
 

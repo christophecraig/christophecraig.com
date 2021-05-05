@@ -3,7 +3,7 @@ title: Christophe Craig
 subtitle: Front End Web Developer
 image: ''
 blurb:
-  heading: Hi there,
+  heading: ''
   text: ''
 intro:
   heading: ''
