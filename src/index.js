@@ -1,6 +1,6 @@
-// JS Goes here - ES6 supported
+import initScrollReveal from "./scripts/scrollReveal";
+import initTiltEffect from "./scripts/tiltAnimation";
+import { targetElements, defaultProps } from "./data/scrollRevealConfig";
 
-import "./css/main.css";
-
-// Say hello
-console.log("🦊 Hello! Edit me in src/index.js");
+initScrollReveal(targetElements, defaultProps);
+initTiltEffect();
