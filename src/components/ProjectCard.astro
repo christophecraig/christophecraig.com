@@ -18,7 +18,9 @@ const t = useTranslations(lang);
 
 <article class="card-hover scroll-reveal p-6 rounded-lg border border-text-light/10 dark:border-text-dark/10 bg-white/50 dark:bg-white/5">
   {image && (
-    <img src={image} alt={title} class="w-full h-48 object-cover rounded mb-4" loading="lazy" />
+    <a href={getLocalizedPath(`/realisations/${slug}/`, lang)}>
+      <img src={image} alt={title} class="w-full h-48 object-cover rounded mb-4" loading="lazy" />
+    </a>
   )}
   <div class="flex flex-wrap gap-2 mb-3">
     {tags.map((tag) => (

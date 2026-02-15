@@ -2,8 +2,8 @@
 title: "Chez Dub!"
 description: "CMS sur mesure et site web pour un bar, avec gestion de contenus pour écrans."
 date: 2024-06-01
-tags: ["strapi", "vue", "next.js", "mysql"]
-image: ""
+tags: ["strapi", "vue", "next.js", "mysql", "tailwind"]
+image: "/images/realisations/chez-dub.png"
 url: "https://chezdub.fr"
 lang: fr
 featured: true

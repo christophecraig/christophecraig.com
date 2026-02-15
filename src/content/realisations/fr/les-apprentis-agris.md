@@ -4,6 +4,7 @@ description: "Le kit pédagogique des métiers de l'agriculture."
 date: 2024-09-12
 tags: ["wordpress", "vite"]
 url: "https://apprentisagris.demainjeseraipaysan.fr"
+image: "/images/realisations/les-apprentis-agris.png"
 lang: fr
 featured: true
 ---

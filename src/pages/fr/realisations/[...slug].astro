@@ -21,6 +21,9 @@ const { Content } = await project.render();
 <BaseLayout title={`${project.data.title} — Christophe Craig`} description={project.data.description}>
   <article class="scroll-reveal">
     <header class="mb-8">
+      {project.data.image && (
+        <img src={project.data.image} alt={project.data.title} class="w-full rounded-lg mb-6" loading="lazy" />
+      )}
       <h1 class="text-3xl md:text-4xl font-bold mb-4">{project.data.title}</h1>
       {project.data.tags.length > 0 && <TagList tags={project.data.tags} />}
       <div class="flex gap-4 mt-4 font-sans text-sm">

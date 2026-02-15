@@ -4,6 +4,7 @@ description: "Educational toolkit for agriculture careers."
 date: 2024-09-12
 tags: ["wordpress", "vite"]
 url: "https://apprentisagris.demainjeseraipaysan.fr"
+image: "/images/realisations/les-apprentis-agris.png"
 lang: en
 featured: true
 ---
