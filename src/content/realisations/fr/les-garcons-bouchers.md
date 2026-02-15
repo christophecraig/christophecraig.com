@@ -12,18 +12,22 @@ featured: true
 
 ## Le projet
 
-Création d'un site pour pouvoir vendre en ligne des côtes de boeuf.
+Création d'un site vitrine avec vente en ligne pour une boucherie artisanale à Cavalaire-sur-Mer. Le site permet aux clients de commander des côtes de bœuf et autres produits en ligne.
+
+Le site est actuellement en attente de contenus de la part du client.
 
 ## Défis techniques
 
-- ***
+- Intégration de Stripe pour le paiement en ligne
+- Notifications en temps réel via Telegram pour les nouvelles commandes
+- Authentification OAuth Google pour l'administration
 
 ## Stack technique
 
-- Astro pour la génération statique
-- Tailwind CSS pour le design responsive
-- Turso pour la base données
-- Hébergement sur cloudflare pages
+- Astro
+- Tailwind
+- Turso
+- Hébergement sur Cloudflare Pages
 - Paiement avec Stripe
 - Emails avec Resend
 - Notifications avec Telegram

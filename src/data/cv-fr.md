@@ -1,74 +1,85 @@
 ---
-layout: ../layouts/BaseLayout.astro
 ---
 
 # Christophe Craig
 
-**Développeur Web Full-Stack**
+**Développeur Web**
 
 ---
 
 ## Profil
 
-Développeur web passionné avec une expertise en technologies modernes JavaScript/TypeScript. J'aime créer des applications web performantes, accessibles et maintenables.
+Développeur web motivé par la résolution de problèmes à travers des expériences simples et attrayantes. Obsédé par la performance, l'essentiel, et la suppression de tout ce qui est inutile.
 
 ---
 
 ## Compétences
 
-### Frontend
-- React, Vue.js, Astro
-- TypeScript, JavaScript (ES2024+)
-- Tailwind CSS, CSS Modules
-- Tests : Vitest, Testing Library
-
 ### Backend
-- Node.js, Express, Fastify
-- PostgreSQL, MongoDB, Redis
-- API REST, GraphQL
-- Docker, CI/CD
+- PHP (Laravel, Symfony, Slim, CakePHP), Node.js, Elixir/Phoenix
 
-### Outils & Méthodologies
-- Git, GitHub Actions
-- Agile / Scrum
-- Accessibilité (WCAG)
-- Performance web (Core Web Vitals)
+### Frontend
+- React, Next.js, JavaScript natif, Vue.js, Astro
+
+### CSS
+- Tailwind, CSS natif
+
+### Base de données
+- MariaDB, MySQL, SQLite, Turso
+
+### Outils
+- Git, GitLab CI, GitHub Actions, Docker, Rundeck/Ansible, Strapi
+
+### Design
+- Affinity Photo
 
 ---
 
 ## Expérience
 
-### Développeur Web Full-Stack — Freelance
-*2022 — Présent*
+### Développeur Web — Log'in Informatique
+*Mi-2022 — Présent*
 
-- Conception et développement de sites et applications web sur mesure
-- Optimisation des performances et de l'accessibilité
-- Mise en place de pipelines CI/CD avec GitHub Actions
-- Technologies principales : Astro, React, Node.js, PostgreSQL
+- Éditeur du logiciel Welogin (gestion d'offices de tourisme)
+- PHP multi-versions (7.2→8.2), Laravel, Symfony, Slim, CakePHP
+- Next.js, React, React Native, MariaDB
+- Suppression de code mort, migration jQuery → JS natif
+- GitLab CI, Rundeck/Ansible, scripts Bash
 
-### Développeur Frontend — Agence Web
-*2020 — 2022*
+### Développeur Web — Web Genius, Nouvelle-Zélande
+*Début 2021 — Mi-2022*
 
-- Développement d'interfaces utilisateur réactives avec React et Vue.js
-- Intégration de maquettes Figma en composants réutilisables
-- Mise en place de tests unitaires et d'intégration
-- Collaboration étroite avec les designers et le product owner
+- Entreprise de marketing web pour petites entreprises locales
+- Design CSS, JavaScript, retouche photo (Affinity Photo)
+- Processus structurés de livraison et tests
+
+### Auto-entrepreneur — Freelance
+*Mi-2025 — Présent*
+
+- Développement web en parallèle du salariat
+
+### Développeur / Concepteur Web — PMB Services (apprentissage)
+*2015 — 2019*
+
+- 2015-2017 : Web Concepteur — maquettes Photoshop, intégration CSS/JS/HTML, adoption de Vue.js
+- 2017-2019 : Développeur — PHP, MySQL, JS, Node.js
 
 ---
 
 ## Formation
 
-### Formation Développeur Web
-*2019 — 2020*
+### Responsable en Ingénierie des Logiciels — CESI Alternance
+*2017 — 2019 — Titre RNCP*
 
-Formation intensive couvrant HTML, CSS, JavaScript, React, Node.js, bases de données et méthodologies agiles.
+### Web Concepteur — CESI Alternance
+*2015 — 2017 — Titre RNCP*
 
 ---
 
 ## Langues
 
 - **Français** — Langue maternelle
-- **Anglais** — Courant (C1)
+- **Anglais** — Courant
 
 ---
 

@@ -1,74 +1,85 @@
 ---
-layout: ../layouts/BaseLayout.astro
 ---
 
 # Christophe Craig
 
-**Full-Stack Web Developer**
+**Web Developer**
 
 ---
 
 ## Profile
 
-Passionate web developer with expertise in modern JavaScript/TypeScript technologies. I enjoy building performant, accessible, and maintainable web applications.
+Web developer driven by solving problems through simple, attractive experiences. Obsessed with performance, essentials, and removing anything unnecessary.
 
 ---
 
 ## Skills
 
-### Frontend
-- React, Vue.js, Astro
-- TypeScript, JavaScript (ES2024+)
-- Tailwind CSS, CSS Modules
-- Testing: Vitest, Testing Library
-
 ### Backend
-- Node.js, Express, Fastify
-- PostgreSQL, MongoDB, Redis
-- REST APIs, GraphQL
-- Docker, CI/CD
+- PHP (Laravel, Symfony, Slim, CakePHP), Node.js, Elixir/Phoenix
 
-### Tools & Methodologies
-- Git, GitHub Actions
-- Agile / Scrum
-- Accessibility (WCAG)
-- Web Performance (Core Web Vitals)
+### Frontend
+- React, Next.js, Vanilla JavaScript, Vue.js, Astro
+
+### CSS
+- Tailwind, Vanilla CSS
+
+### Databases
+- MariaDB, MySQL, SQLite, Turso
+
+### Tools
+- Git, GitLab CI, GitHub Actions, Docker, Rundeck/Ansible, Strapi
+
+### Design
+- Affinity Photo
 
 ---
 
 ## Experience
 
-### Full-Stack Web Developer — Freelance
-*2022 — Present*
+### Web Developer — Log'in Informatique
+*Mid-2022 — Present*
 
-- Design and development of custom websites and web applications
-- Performance and accessibility optimization
-- CI/CD pipeline setup with GitHub Actions
-- Main technologies: Astro, React, Node.js, PostgreSQL
+- Software editor of Welogin (tourism office management)
+- Multi-version PHP (7.2→8.2), Laravel, Symfony, Slim, CakePHP
+- Next.js, React, React Native, MariaDB
+- Dead code removal, jQuery → vanilla JS migration
+- GitLab CI, Rundeck/Ansible, Bash scripts
 
-### Frontend Developer — Web Agency
-*2020 — 2022*
+### Web Developer — Web Genius, New Zealand
+*Early 2021 — Mid-2022*
 
-- Development of responsive user interfaces with React and Vue.js
-- Figma mockup integration into reusable components
-- Unit and integration test implementation
-- Close collaboration with designers and product owner
+- Web marketing company for local small businesses
+- CSS design, JavaScript, photo editing (Affinity Photo)
+- Structured delivery and testing processes
+
+### Self-employed — Freelance
+*Mid-2025 — Present*
+
+- Web development alongside salaried position
+
+### Developer / Web Designer — PMB Services (apprenticeship)
+*2015 — 2019*
+
+- 2015-2017: Web Designer — Photoshop mockups, CSS/JS/HTML integration, Vue.js adoption
+- 2017-2019: Developer — PHP, MySQL, JS, Node.js
 
 ---
 
 ## Education
 
-### Web Developer Training
-*2019 — 2020*
+### Software Engineering Manager — CESI Apprenticeship
+*2017 — 2019 — RNCP certified*
 
-Intensive program covering HTML, CSS, JavaScript, React, Node.js, databases, and agile methodologies.
+### Web Designer — CESI Apprenticeship
+*2015 — 2017 — RNCP certified*
 
 ---
 
 ## Languages
 
 - **French** — Native
-- **English** — Fluent (C1)
+- **English** — Fluent
 
 ---
 

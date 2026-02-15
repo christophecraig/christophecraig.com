@@ -20,5 +20,5 @@ Une plateforme de contenus pédagogiques et de demandes d'intervention à destin
 
 ## Stack technique
 
-- Wordpress
-- Vite pour la compilation des assets
+- **Wordpress**
+- **Vite** pour la compilation des assets
