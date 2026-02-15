@@ -11,7 +11,7 @@ featured: true
 
 ## The project
 
-Custom CMS built with Strapi (MySQL) to power both the website and the bar's display screens. Personal project made for a friend.
+Custom CMS built with Strapi (MySQL) to power both the website and the bar's display screens.
 
 ## Features
 

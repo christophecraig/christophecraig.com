@@ -11,7 +11,7 @@ featured: true
 
 ## Le projet
 
-CMS sur mesure construit avec Strapi (MySQL) pour alimenter à la fois le site web et les écrans d'affichage du bar. Projet personnel réalisé pour un ami.
+CMS sur mesure construit avec Strapi (MySQL) pour alimenter à la fois le site web et les écrans d'affichage du bar.
 
 ## Fonctionnalités
 
