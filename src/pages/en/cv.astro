@@ -13,13 +13,12 @@ const Content = cvContent.default;
   <div class="scroll-reveal">
     <div class="flex justify-between items-center mb-8">
       <h1 class="text-3xl font-bold">{t('cv.title')}</h1>
-      <a
-        href="/cv-en.pdf"
-        class="no-print inline-block font-sans px-4 py-2 bg-accent-green text-white rounded-lg hover:bg-accent-green/90 transition-colors text-sm"
-        download
+      <button
+        onclick="window.print()"
+        class="no-print inline-block font-sans px-4 py-2 bg-accent-green text-white rounded-lg hover:bg-accent-green/90 transition-colors text-sm cursor-pointer"
       >
         {t('cv.download')}
-      </a>
+      </button>
     </div>
     <div class="prose prose-lg dark:prose-invert max-w-none">
       <Content />
