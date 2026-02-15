@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TagList from '../../../components/TagList.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations, formatDate, stripLangFromSlug } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles', ({ data }) => data.lang === 'fr' && !data.draft);
+  return articles.map((article) => ({
+    params: { slug: stripLangFromSlug(article.slug) },
+    props: { article },
+  }));
+}
+
+const lang = 'fr';
+const t = useTranslations(lang);
+const { article } = Astro.props;
+const { Content } = await article.render();
+---
+
+<BaseLayout title={`${article.data.title} — Christophe Craig`} description={article.data.description}>
+  <article class="scroll-reveal">
+    <header class="mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">{article.data.title}</h1>
+      <div class="font-sans text-sm text-text-light/60 dark:text-text-dark/60 mb-4">
+        <time datetime={article.data.date.toISOString()}>
+          {t('article.published')} {formatDate(article.data.date, lang)}
+        </time>
+        {article.data.updatedDate && (
+          <span class="ml-4">
+            {t('article.updated')} {formatDate(article.data.updatedDate, lang)}
+          </span>
+        )}
+      </div>
+      {article.data.tags.length > 0 && <TagList tags={article.data.tags} />}
+    </header>
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

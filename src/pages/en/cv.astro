@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const cvContent = await import('../../data/cv-en.md');
+const Content = cvContent.default;
+---
+
+<BaseLayout title={`${t('cv.title')} — Christophe Craig`}>
+  <div class="scroll-reveal">
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-3xl font-bold">{t('cv.title')}</h1>
+      <a
+        href="/cv-en.pdf"
+        class="no-print inline-block font-sans px-4 py-2 bg-accent-green text-white rounded-lg hover:bg-accent-green/90 transition-colors text-sm"
+        download
+      >
+        {t('cv.download')}
+      </a>
+    </div>
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <Content />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleCard from '../../../components/ArticleCard.astro';
+import ScrollLoader from '../../../components/ScrollLoader.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations, stripLangFromSlug } from '../../../i18n/utils';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+
+const articles = (await getCollection('articles', ({ data }) => data.lang === lang && !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title={`${t('articles.title')} — Christophe Craig`} description={t('articles.description')}>
+  <h1 class="text-3xl font-bold mb-2 scroll-reveal">{t('articles.title')}</h1>
+  <p class="font-sans text-text-light/70 dark:text-text-dark/70 mb-8 scroll-reveal">{t('articles.description')}</p>
+  <div class="grid gap-6">
+    {articles.map((article) => (
+      <div data-article>
+        <ArticleCard
+          title={article.data.title}
+          description={article.data.description}
+          date={article.data.date}
+          slug={stripLangFromSlug(article.slug)}
+          tags={article.data.tags}
+        />
+      </div>
+    ))}
+  </div>
+  <ScrollLoader />
+</BaseLayout>

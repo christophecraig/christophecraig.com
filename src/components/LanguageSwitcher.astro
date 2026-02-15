@@ -1,0 +1,17 @@
+---
+import { getLangFromUrl, getAlternateLang } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const altLang = getAlternateLang(lang);
+const currentPath = Astro.url.pathname;
+const altPath = currentPath.replace(`/${lang}`, `/${altLang}`);
+---
+
+<a
+  href={altPath}
+  class="font-sans text-sm px-2 py-1 rounded border border-text-light/20 dark:border-text-dark/20 hover:bg-accent-green/10 transition-colors"
+  aria-label={`Switch to ${altLang === 'fr' ? 'Français' : 'English'}`}
+>
+  {altLang.toUpperCase()}
+</a>

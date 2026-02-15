@@ -1,0 +1,48 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  tags?: string[];
+  url?: string;
+  repo?: string;
+  image?: string;
+}
+
+const { title, description, slug, tags = [], url, repo, image } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<article class="card-hover scroll-reveal p-6 rounded-lg border border-text-light/10 dark:border-text-dark/10 bg-white/50 dark:bg-white/5">
+  {image && (
+    <img src={image} alt={title} class="w-full h-48 object-cover rounded mb-4" loading="lazy" />
+  )}
+  <div class="flex flex-wrap gap-2 mb-3">
+    {tags.map((tag) => (
+      <span class="font-sans text-xs px-2 py-0.5 rounded-full bg-accent-cyan/30 dark:bg-accent-cyan/20">
+        {tag}
+      </span>
+    ))}
+  </div>
+  <h3 class="text-xl font-bold mb-2">
+    <a href={getLocalizedPath(`/realisations/${slug}/`, lang)} class="link-underline hover:text-accent-green transition-colors">
+      {title}
+    </a>
+  </h3>
+  <p class="font-sans text-sm text-text-light/70 dark:text-text-dark/70 mb-4">{description}</p>
+  <div class="flex gap-3 font-sans text-sm">
+    {url && (
+      <a href={url} target="_blank" rel="noopener" class="text-accent-green hover:text-accent-rose transition-colors">
+        {t('project.visit')} &rarr;
+      </a>
+    )}
+    {repo && (
+      <a href={repo} target="_blank" rel="noopener" class="text-accent-green hover:text-accent-rose transition-colors">
+        {t('project.source')} &rarr;
+      </a>
+    )}
+  </div>
+</article>

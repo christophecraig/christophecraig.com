@@ -1,0 +1,80 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="relative" id="search-container">
+  <input
+    type="text"
+    id="search-input"
+    placeholder={t('search.placeholder')}
+    class="w-full font-sans px-4 py-3 rounded-lg border border-text-light/20 dark:border-text-dark/20 bg-white dark:bg-bg-dark focus:outline-none focus:ring-2 focus:ring-accent-green/50 transition-colors"
+    autocomplete="off"
+  />
+  <div id="search-results" class="hidden absolute w-full mt-2 rounded-lg border border-text-light/10 dark:border-text-dark/10 bg-white dark:bg-bg-dark shadow-lg max-h-96 overflow-y-auto z-50">
+  </div>
+  <p id="search-no-results" class="hidden mt-4 font-sans text-text-light/60 dark:text-text-dark/60">
+    {t('search.noResults')}
+  </p>
+</div>
+
+<script>
+  import Fuse from 'fuse.js';
+
+  const lang = document.documentElement.lang || 'fr';
+  let fuse: Fuse<any> | null = null;
+
+  async function initSearch() {
+    const res = await fetch('/search-index.json');
+    const data = await res.json();
+    const items = data.filter((item: any) => item.lang === lang);
+    fuse = new Fuse(items, {
+      keys: ['title', 'description', 'tags'],
+      threshold: 0.3,
+    });
+  }
+
+  const input = document.getElementById('search-input') as HTMLInputElement;
+  const resultsEl = document.getElementById('search-results')!;
+  const noResultsEl = document.getElementById('search-no-results')!;
+
+  input?.addEventListener('focus', () => {
+    if (!fuse) initSearch();
+  });
+
+  input?.addEventListener('input', () => {
+    const query = input.value.trim();
+    if (!query || !fuse) {
+      resultsEl.classList.add('hidden');
+      noResultsEl.classList.add('hidden');
+      return;
+    }
+
+    const results = fuse.search(query, { limit: 10 });
+
+    if (results.length === 0) {
+      resultsEl.classList.add('hidden');
+      noResultsEl.classList.remove('hidden');
+      return;
+    }
+
+    noResultsEl.classList.add('hidden');
+    resultsEl.classList.remove('hidden');
+    resultsEl.innerHTML = results
+      .map(({ item }) => `
+        <a href="${item.url}" class="block px-4 py-3 hover:bg-accent-green/10 transition-colors border-b border-text-light/5 dark:border-text-dark/5 last:border-0">
+          <span class="font-typewriter font-bold text-sm">${item.title}</span>
+          <span class="block font-sans text-xs text-text-light/60 dark:text-text-dark/60 mt-1">${item.description}</span>
+        </a>
+      `)
+      .join('');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!(e.target as HTMLElement).closest('#search-container')) {
+      resultsEl.classList.add('hidden');
+    }
+  });
+</script>

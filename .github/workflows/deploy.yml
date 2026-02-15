@@ -1,0 +1,50 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      # Generate CV PDFs
+      - name: Install Puppeteer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+
+      - name: Generate CV PDFs
+        run: |
+          npx puppeteer browsers install chrome
+          node scripts/generate-cv-pdf.mjs
+
+      - name: Copy PDFs to dist
+        run: |
+          cp cv-fr.pdf dist/ 2>/dev/null || true
+          cp cv-en.pdf dist/ 2>/dev/null || true
+
+      - name: Deploy to VPS
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avz --delete
+          path: dist/
+          remote_path: ${{ secrets.VPS_PATH }}/
+          remote_host: ${{ secrets.VPS_HOST }}
+          remote_user: ${{ secrets.VPS_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}

@@ -1,0 +1,21 @@
+---
+import { getLangFromUrl, getLocalizedPath } from '../i18n/utils';
+
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<div class="flex flex-wrap gap-2">
+  {tags.map((tag) => (
+    <a
+      href={getLocalizedPath(`/tags/${tag}/`, lang)}
+      class="font-sans text-sm px-3 py-1 rounded-full bg-accent-yellow/30 dark:bg-accent-yellow/20 hover:bg-accent-yellow/50 transition-colors"
+    >
+      {tag}
+    </a>
+  ))}
+</div>

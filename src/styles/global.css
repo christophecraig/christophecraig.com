@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap');
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-light text-text-light font-typewriter transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-bg-dark text-text-dark;
+  }
+}
+
+@layer components {
+  /* Animated underline links */
+  .link-underline {
+    @apply relative inline-block;
+  }
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-accent-green transition-all duration-300;
+  }
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Blinking cursor */
+  .cursor-blink::after {
+    content: '▌';
+    @apply animate-blink text-accent-green;
+  }
+
+  /* Card lift on hover */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  /* Scroll reveal */
+  .scroll-reveal {
+    @apply opacity-0 translate-y-4 transition-all duration-700;
+  }
+  .scroll-reveal.revealed {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Prose dark mode */
+  .dark .prose {
+    @apply text-text-dark;
+  }
+  .dark .prose h1,
+  .dark .prose h2,
+  .dark .prose h3,
+  .dark .prose h4 {
+    @apply text-text-dark;
+  }
+  .dark .prose a {
+    @apply text-accent-cyan;
+  }
+  .dark .prose strong {
+    @apply text-text-dark;
+  }
+  .dark .prose code {
+    @apply text-accent-yellow;
+  }
+  .dark .prose blockquote {
+    @apply border-accent-green text-text-dark/80;
+  }
+}
+
+@layer utilities {
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+}
+
+/* Print styles for CV */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  nav, footer, .no-print {
+    display: none !important;
+  }
+  .prose {
+    max-width: none;
+  }
+}

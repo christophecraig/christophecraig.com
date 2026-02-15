@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SearchBar from '../../components/SearchBar.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={`${t('search.title')} — Christophe Craig`}>
+  <h1 class="text-3xl font-bold mb-8 scroll-reveal">{t('search.title')}</h1>
+  <SearchBar />
+</BaseLayout>

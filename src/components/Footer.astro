@@ -1,0 +1,13 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-text-light/10 dark:border-text-dark/10 mt-16">
+  <div class="max-w-4xl mx-auto px-4 py-8 text-center font-sans text-sm text-text-light/60 dark:text-text-dark/60">
+    <p>&copy; {year} Christophe Craig. {t('footer.rights')}</p>
+  </div>
+</footer>

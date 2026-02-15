@@ -1,0 +1,37 @@
+---
+import { getLangFromUrl, useTranslations, formatDate, getLocalizedPath } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  slug: string;
+  tags?: string[];
+}
+
+const { title, description, date, slug, tags = [] } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<article class="card-hover scroll-reveal p-6 rounded-lg border border-text-light/10 dark:border-text-dark/10 bg-white/50 dark:bg-white/5">
+  <div class="flex flex-wrap gap-2 mb-3">
+    {tags.map((tag) => (
+      <a
+        href={getLocalizedPath(`/tags/${tag}/`, lang)}
+        class="font-sans text-xs px-2 py-0.5 rounded-full bg-accent-yellow/30 dark:bg-accent-yellow/20 text-text-light dark:text-text-dark hover:bg-accent-yellow/50 transition-colors"
+      >
+        {tag}
+      </a>
+    ))}
+  </div>
+  <h3 class="text-xl font-bold mb-2">
+    <a href={getLocalizedPath(`/articles/${slug}/`, lang)} class="link-underline hover:text-accent-green transition-colors">
+      {title}
+    </a>
+  </h3>
+  <p class="font-sans text-sm text-text-light/70 dark:text-text-dark/70 mb-3">{description}</p>
+  <time class="font-sans text-xs text-text-light/50 dark:text-text-dark/50" datetime={date.toISOString()}>
+    {formatDate(date, lang)}
+  </time>
+</article>

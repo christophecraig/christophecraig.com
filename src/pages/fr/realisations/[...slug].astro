@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TagList from '../../../components/TagList.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations, stripLangFromSlug } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('realisations', ({ data }) => data.lang === 'fr');
+  return projects.map((project) => ({
+    params: { slug: stripLangFromSlug(project.slug) },
+    props: { project },
+  }));
+}
+
+const lang = 'fr';
+const t = useTranslations(lang);
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<BaseLayout title={`${project.data.title} — Christophe Craig`} description={project.data.description}>
+  <article class="scroll-reveal">
+    <header class="mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">{project.data.title}</h1>
+      {project.data.tags.length > 0 && <TagList tags={project.data.tags} />}
+      <div class="flex gap-4 mt-4 font-sans text-sm">
+        {project.data.url && (
+          <a href={project.data.url} target="_blank" rel="noopener" class="text-accent-green hover:text-accent-rose transition-colors">
+            {t('project.visit')} &rarr;
+          </a>
+        )}
+        {project.data.repo && (
+          <a href={project.data.repo} target="_blank" rel="noopener" class="text-accent-green hover:text-accent-rose transition-colors">
+            {t('project.source')} &rarr;
+          </a>
+        )}
+      </div>
+    </header>
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

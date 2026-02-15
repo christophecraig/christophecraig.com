@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations, getLocalizedPath, stripLangFromSlug } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const articles = (await getCollection('articles', ({ data }) => data.lang === lang && !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const featuredProjects = (await getCollection('realisations', ({ data }) => data.lang === lang && data.featured))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Christophe Craig — Web Developer">
+  <section class="py-16 md:py-24 scroll-reveal">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+      Christophe Craig<span class="cursor-blink"></span>
+    </h1>
+    <p class="text-2xl md:text-3xl text-accent-green mb-4">{t('hero.tagline')}</p>
+    <p class="font-sans text-lg text-text-light/70 dark:text-text-dark/70 max-w-2xl">
+      {t('hero.subtitle')}
+    </p>
+    <div class="mt-8">
+      <a href={getLocalizedPath('/cv/', lang)} class="inline-block font-sans px-6 py-3 bg-accent-green text-white rounded-lg hover:bg-accent-green/90 transition-colors">
+        {t('home.viewCV')}
+      </a>
+    </div>
+  </section>
+
+  {featuredProjects.length > 0 && (
+    <section class="mb-16 scroll-reveal">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-2xl font-bold">{t('home.featured')}</h2>
+        <a href={getLocalizedPath('/realisations/', lang)} class="font-sans text-sm text-accent-green link-underline">
+          {t('home.viewAll')} &rarr;
+        </a>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {featuredProjects.map((project) => (
+          <ProjectCard
+            title={project.data.title}
+            description={project.data.description}
+            slug={stripLangFromSlug(project.slug)}
+            tags={project.data.tags}
+            url={project.data.url}
+            repo={project.data.repo}
+            image={project.data.image}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {articles.length > 0 && (
+    <section class="mb-16 scroll-reveal">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-2xl font-bold">{t('home.latest')}</h2>
+        <a href={getLocalizedPath('/articles/', lang)} class="font-sans text-sm text-accent-green link-underline">
+          {t('home.viewAll')} &rarr;
+        </a>
+      </div>
+      <div class="grid gap-6">
+        {articles.map((article) => (
+          <ArticleCard
+            title={article.data.title}
+            description={article.data.description}
+            date={article.data.date}
+            slug={stripLangFromSlug(article.slug)}
+            tags={article.data.tags}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+</BaseLayout>

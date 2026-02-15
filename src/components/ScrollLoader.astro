@@ -1,0 +1,51 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div id="scroll-sentinel" class="py-8 text-center">
+  <p id="scroll-loading" class="hidden font-sans text-sm text-text-light/50 dark:text-text-dark/50">
+    {t('scroll.loading')}
+  </p>
+</div>
+
+<script>
+  const BATCH_SIZE = 6;
+  let shown = BATCH_SIZE;
+
+  const articles = document.querySelectorAll<HTMLElement>('[data-article]');
+  const sentinel = document.getElementById('scroll-sentinel');
+  const loading = document.getElementById('scroll-loading');
+
+  // Hide articles beyond the initial batch
+  articles.forEach((el, i) => {
+    if (i >= BATCH_SIZE) el.classList.add('hidden');
+  });
+
+  if (articles.length > BATCH_SIZE && sentinel) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && shown < articles.length) {
+          loading?.classList.remove('hidden');
+          // Small delay for visual feedback
+          setTimeout(() => {
+            const end = Math.min(shown + BATCH_SIZE, articles.length);
+            for (let i = shown; i < end; i++) {
+              articles[i].classList.remove('hidden');
+              articles[i].classList.add('scroll-reveal');
+              // Trigger reveal animation
+              requestAnimationFrame(() => articles[i].classList.add('revealed'));
+            }
+            shown = end;
+            loading?.classList.add('hidden');
+            if (shown >= articles.length) observer.disconnect();
+          }, 200);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(sentinel);
+  }
+</script>
