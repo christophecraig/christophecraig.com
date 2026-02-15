@@ -1,7 +1,7 @@
 ---
 title: "Building a Personal Site with Astro"
 description: "How I built my bilingual personal website using Astro, Tailwind CSS, and Markdown."
-date: 2025-01-15
+date: 2026-02-15
 tags: ["astro", "tailwind", "web"]
 draft: false
 lang: en
@@ -26,7 +26,7 @@ A fast, accessible, and easy-to-maintain website. Each article is a simple Markd
 
 ```javascript
 // Content Collection example
-const articles = await getCollection('articles');
+const articles = await getCollection("articles");
 ```
 
 Next steps include adding an RSS feed and improving SEO.
